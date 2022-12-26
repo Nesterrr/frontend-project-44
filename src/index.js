@@ -1,54 +1,65 @@
 import readlineSync from 'readline-sync';
 import cli from './cli.js';
 
-const TOTAL_QUESTIONS = 2;
-
-const askQuestion = (value) => {
-  console.log(`Question: ${value}`);
-};
+const TOTAL_QUESTIONS = 3;
 
 const getAnswer = () => readlineSync.question('Your answer: ');
 
 const showResult = (result) => console.log(result);
+
+const askQuestion = (
+  getQuestion,
+  checkAnswer,
+  gameText,
+  name,
+) => {
+  const {
+    text,
+    value,
+  } = getQuestion();
+
+  console.log(`Question: ${text}`);
+
+  const answer = getAnswer();
+
+  const isCorrectAnswer = checkAnswer(answer, value);
+
+  const result = isCorrectAnswer
+    ? gameText.correctAnswer
+    : gameText.incorrectAnswer(answer, value);
+
+  showResult(result);
+
+  if (!isCorrectAnswer) {
+    console.log(`Let's try again, ${name}!`);
+    return 'failure';
+  }
+  return 'success';
+};
 
 const runGame = (
   getQuestion,
   gameText,
   checkAnswer,
 ) => {
-  let isEnd = false;
   let questionIndex = 0;
   const name = cli();
 
   console.log(gameText.description);
 
-  while (!isEnd) {
-    const {
-      text,
-      value,
-    } = getQuestion();
-
-    askQuestion(text);
-
-    const answer = getAnswer();
-
-    const isCorrectAnswer = checkAnswer(answer, value);
-
-    const result = isCorrectAnswer
-      ? gameText.correctAnswer
-      : gameText.incorrectAnswer(answer, value);
-
-    showResult(result);
-
-    if (!isCorrectAnswer) {
-      isEnd = true;
-      console.log(`Let's try again, ${name}!`);
+  while (questionIndex < TOTAL_QUESTIONS) {
+    const result = askQuestion(
+      getQuestion,
+      checkAnswer,
+      gameText,
+      name,
+    );
+    if (result === 'failure') {
       return;
     }
-    if (questionIndex === TOTAL_QUESTIONS) {
-      isEnd = (questionIndex === TOTAL_QUESTIONS);
+    if (result === 'success') {
+      questionIndex += 1;
     }
-    questionIndex += 1;
   }
   console.log(`Congratulations, ${name}!`);
 };
