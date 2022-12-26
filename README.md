@@ -12,6 +12,13 @@
   
   Loss
    [![asciicast](https://asciinema.org/a/CalWsx9AyS9zj9skztmA4slXG.svg)](https://asciinema.org/a/CalWsx9AyS9zj9skztmA4slXG)
+ ## gcd
+  Win
+   [![asciicast](https://asciinema.org/a/l0pzsgjcWtGYUF5AQpYaSP3Jl.svg)](https://asciinema.org/a/l0pzsgjcWtGYUF5AQpYaSP3Jl)
+  
+  Loss
+   [![asciicast](https://asciinema.org/a/qEi6S2xLzvHZ53R4h6JNPvdYI.svg)](https://asciinema.org/a/qEi6S2xLzvHZ53R4h6JNPvdYI)
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Nesterrr/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/Nesterrr/frontend-project-44/actions)
 
