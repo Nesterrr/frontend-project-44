@@ -19,6 +19,12 @@
   Loss
    [![asciicast](https://asciinema.org/a/qEi6S2xLzvHZ53R4h6JNPvdYI.svg)](https://asciinema.org/a/qEi6S2xLzvHZ53R4h6JNPvdYI)
 
+ ## progression
+  Win
+   [![asciicast](https://asciinema.org/a/nIBJsNN6YnLrArAL1HHFQyNiN.svg)](https://asciinema.org/a/nIBJsNN6YnLrArAL1HHFQyNiN)
+ 
+  Loss
+   [![asciicast](https://asciinema.org/a/OFQ8s0JAJDdbIMe9E6YIzXNSG.svg)](https://asciinema.org/a/OFQ8s0JAJDdbIMe9E6YIzXNSG)
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Nesterrr/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/Nesterrr/frontend-project-44/actions)
 
