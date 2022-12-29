@@ -3,6 +3,11 @@ import cli from './cli.js';
 
 const TOTAL_QUESTIONS = 3;
 
+const GameStatus = {
+  success: 'SUCCESS',
+  failure: 'FAILURE',
+};
+
 const getAnswer = () => readlineSync.question('Your answer: ');
 
 const showResult = (result) => console.log(result);
@@ -32,9 +37,9 @@ const askQuestion = (
 
   if (!isCorrectAnswer) {
     console.log(`Let's try again, ${name}!`);
-    return 'failure';
+    return GameStatus.failure;
   }
-  return 'success';
+  return GameStatus.success;
 };
 
 const runGame = (
@@ -54,10 +59,10 @@ const runGame = (
       gameText,
       name,
     );
-    if (result === 'failure') {
+    if (result === GameStatus.failure) {
       return;
     }
-    if (result === 'success') {
+    if (result === GameStatus.success) {
       questionIndex += 1;
     }
   }

@@ -7,14 +7,14 @@ const gameText = {
   incorrectAnswer: () => 'Incorrect',
 };
 
-const RANDOM_NNUMBER_RANGE = 100;
+const RANDOM_NUMBER_RANGE = 100;
 
 const checkAnswer = (answer, number) => (
   number % 2 === 0 && answer === 'yes')
   || (number % 2 !== 0 && answer === 'no');
 
 const getQuestion = () => {
-  const randomNumber = getRandomNumber(RANDOM_NNUMBER_RANGE);
+  const randomNumber = getRandomNumber(RANDOM_NUMBER_RANGE);
   return ({
     text: randomNumber,
     value: randomNumber,

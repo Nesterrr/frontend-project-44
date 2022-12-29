@@ -1,7 +1,7 @@
 import runGame from '../index.js';
 import { getRandomNumber } from '../utils.js';
 
-const RANDOM_NNUMBER_RANGE = 100;
+const RANDOM_NUMBER_RANGE = 100;
 
 const gameText = {
   description: 'Find the greatest common divisor of given numbers.',
@@ -16,8 +16,8 @@ const getGcd = (x, y) => {
 };
 
 const getQuestion = () => {
-  const number1 = getRandomNumber(RANDOM_NNUMBER_RANGE);
-  const number2 = getRandomNumber(RANDOM_NNUMBER_RANGE);
+  const number1 = getRandomNumber(RANDOM_NUMBER_RANGE);
+  const number2 = getRandomNumber(RANDOM_NUMBER_RANGE);
 
   return ({
     text: `${number1} ${number2}`,
