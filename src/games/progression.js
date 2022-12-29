@@ -8,7 +8,7 @@ const PROGRESSION_DELTA_RANGE = 8;
 const PROGRESSION_START_NUMBER_RANGE = 10;
 
 const gameText = {
-  description: 'Find the greatest common divisor of given numbers.',
+  description: 'What number is missing in the progression?',
   correctAnswer: 'Correct!',
   incorrectAnswer: (incorrectAnswer, correctAnswer) => `'${incorrectAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`,
 };
