@@ -51,6 +51,7 @@ const runGame = (
     console.log(result);
 
     if (!isCorrectAnswer) {
+      console.log(`Let's try again, ${name}`);
       return;
     }
     questionIndex += 1;
