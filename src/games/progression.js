@@ -31,12 +31,12 @@ const getQuestion = () => {
   const index = getRandomNumber(progression.length);
 
   return ({
-    text: showProgression(progression, index),
-    value: progression[index],
+    question: showProgression(progression, index),
+    answer: progression[index],
   });
 };
 
-const checkAnswer = (answer, number) => Number(answer) === number;
+const checkAnswer = (answer, userAnswer) => Number(answer) === Number(userAnswer);
 
 const runProgressionGame = () => {
   runGame(

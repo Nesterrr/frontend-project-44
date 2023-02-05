@@ -3,45 +3,6 @@ import cli from './cli.js';
 
 const TOTAL_QUESTIONS = 3;
 
-const GameStatus = {
-  success: 'SUCCESS',
-  failure: 'FAILURE',
-};
-
-const getAnswer = () => readlineSync.question('Your answer: ');
-
-const showResult = (result) => console.log(result);
-
-const askQuestion = (
-  getQuestion,
-  checkAnswer,
-  gameText,
-  name,
-) => {
-  const {
-    text,
-    value,
-  } = getQuestion();
-
-  console.log(`Question: ${text}`);
-
-  const answer = getAnswer();
-
-  const isCorrectAnswer = checkAnswer(answer, value);
-
-  const result = isCorrectAnswer
-    ? gameText.correctAnswer
-    : gameText.incorrectAnswer(answer, value);
-
-  showResult(result);
-
-  if (!isCorrectAnswer) {
-    console.log(`Let's try again, ${name}!`);
-    return GameStatus.failure;
-  }
-  return GameStatus.success;
-};
-
 const runGame = (
   getQuestion,
   gameText,
@@ -53,18 +14,24 @@ const runGame = (
   console.log(gameText.description);
 
   while (questionIndex < TOTAL_QUESTIONS) {
-    const result = askQuestion(
-      getQuestion,
-      checkAnswer,
-      gameText,
-      name,
-    );
-    if (result === GameStatus.failure) {
+    const { question, answer } = getQuestion();
+  
+    console.log(`Question: ${question}`);
+
+    const userAnswer = readlineSync.question('Your answer: ')
+
+    const isCorrectAnswer = checkAnswer(answer, userAnswer);
+  
+    const result = isCorrectAnswer
+      ? gameText.correctAnswer
+      : gameText.incorrectAnswer(userAnswer, answer);
+
+    console.log(result);
+  
+    if (!isCorrectAnswer) {
       return;
     }
-    if (result === GameStatus.success) {
-      questionIndex += 1;
-    }
+    questionIndex += 1;
   }
   console.log(`Congratulations, ${name}!`);
 };

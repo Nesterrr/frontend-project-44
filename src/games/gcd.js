@@ -20,12 +20,12 @@ const getQuestion = () => {
   const number2 = getRandomNumber(RANDOM_NUMBER_RANGE);
 
   return ({
-    text: `${number1} ${number2}`,
-    value: getGcd(number1, number2),
+    question: `${number1} ${number2}`,
+    answer: getGcd(number1, number2),
   });
 };
 
-const checkAnswer = (answer, number) => Number(answer) === number;
+const checkAnswer = (userAnswer, answer) => Number(answer) === Number(userAnswer);
 
 const runGcdGame = () => {
   runGame(

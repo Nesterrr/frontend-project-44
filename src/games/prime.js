@@ -30,14 +30,15 @@ const gameText = {
 const getQuestion = () => {
   const randomNumber = getRandomNumber(RANDOM_NUMBER_RANGE);
   return ({
-    text: randomNumber,
-    value: randomNumber,
+    question: randomNumber,
+    answer: randomNumber,
   });
 };
 
-const checkAnswer = (answer, number) => {
+const checkAnswer = (number, userAnswer) => {
   const isPrime = getIsPrime(number);
-  return (isPrime && answer === PlayerAnswer.yes) || (!isPrime && answer === PlayerAnswer.no);
+  return (isPrime && userAnswer === PlayerAnswer.yes)
+    || (!isPrime && userAnswer === PlayerAnswer.no);
 };
 
 const runPrimeGame = () => {

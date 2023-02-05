@@ -9,15 +9,15 @@ const gameText = {
 
 const RANDOM_NUMBER_RANGE = 100;
 
-const checkAnswer = (answer, number) => Number(answer) === number;
+const checkAnswer = (number, userAnswer) => Number(userAnswer) === number;
 
 const getQuestion = () => {
   const number1 = getRandomNumber(RANDOM_NUMBER_RANGE);
   const number2 = getRandomNumber(RANDOM_NUMBER_RANGE);
 
   return ({
-    text: `${number1} + ${number2}`,
-    value: number1 + number2,
+    question: `${number1} + ${number2}`,
+    answer: number1 + number2,
   });
 };
 

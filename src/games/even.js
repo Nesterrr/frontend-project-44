@@ -9,15 +9,15 @@ const gameText = {
 
 const RANDOM_NUMBER_RANGE = 100;
 
-const checkAnswer = (answer, number) => (
-  number % 2 === 0 && answer === 'yes')
-  || (number % 2 !== 0 && answer === 'no');
+const checkAnswer = (number, userAnswer) => (
+  number % 2 === 0 && userAnswer === 'yes')
+    || (number % 2 !== 0 && userAnswer === 'no');
 
 const getQuestion = () => {
   const randomNumber = getRandomNumber(RANDOM_NUMBER_RANGE);
   return ({
-    text: randomNumber,
-    value: randomNumber,
+    question: randomNumber,
+    answer: randomNumber,
   });
 };
 
