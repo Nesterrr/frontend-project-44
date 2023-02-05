@@ -7,13 +7,28 @@ const RANDOM_NUMBER_RANGE = 100;
 
 const checkAnswer = (number, userAnswer) => Number(userAnswer) === number;
 
+const operators = ['+', '-', '*'];
+
+const calc = (number1, number2, operator) => {
+  switch (operator) {
+    case '*':
+      return number1 * number2;
+    case '-':
+      return number1 - number2;
+    case '+':
+    default:
+      return number1 + number2;
+  }
+};
+
 const getQuestion = () => {
   const number1 = getRandomNumber(0, RANDOM_NUMBER_RANGE);
   const number2 = getRandomNumber(0, RANDOM_NUMBER_RANGE);
 
+  const operator = operators[getRandomNumber(0, 2)];
   return ({
-    question: `${number1} + ${number2}`,
-    answer: number1 + number2,
+    question: `${number1} ${operator} ${number2}`,
+    answer: calc(number1, number2, operator),
   });
 };
 
