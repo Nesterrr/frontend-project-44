@@ -12,8 +12,8 @@ const getGcd = (x, y) => {
 };
 
 const getQuestion = () => {
-  const number1 = getRandomNumber(RANDOM_NUMBER_RANGE);
-  const number2 = getRandomNumber(RANDOM_NUMBER_RANGE);
+  const number1 = getRandomNumber(0, RANDOM_NUMBER_RANGE);
+  const number2 = getRandomNumber(0, RANDOM_NUMBER_RANGE);
 
   return ({
     question: `${number1} ${number2}`,

@@ -24,7 +24,7 @@ const getIsPrime = (value) => {
 const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const getQuestion = () => {
-  const randomNumber = getRandomNumber(RANDOM_NUMBER_RANGE);
+  const randomNumber = getRandomNumber(0, RANDOM_NUMBER_RANGE);
   return ({
     question: randomNumber,
     answer: randomNumber,

@@ -10,7 +10,7 @@ const checkAnswer = (number, userAnswer) => (
     || (number % 2 !== 0 && userAnswer === 'no');
 
 const getQuestion = () => {
-  const randomNumber = getRandomNumber(RANDOM_NUMBER_RANGE);
+  const randomNumber = getRandomNumber(0, RANDOM_NUMBER_RANGE);
   return ({
     question: randomNumber,
     answer: randomNumber,
