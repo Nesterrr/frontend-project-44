@@ -1,11 +1,7 @@
-import runGame from '../index.js';
+import runGame, { GAME_ERROR_TYPE } from '../index.js';
 import { getRandomNumber } from '../utils.js';
 
-const gameText = {
-  description: 'Answer "yes" if the number is even, otherwise answer "no".',
-  correctAnswer: 'Correct!',
-  incorrectAnswer: () => 'Incorrect',
-};
+const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const RANDOM_NUMBER_RANGE = 100;
 
@@ -24,8 +20,9 @@ const getQuestion = () => {
 const runEvenGame = () => {
   runGame(
     getQuestion,
-    gameText,
+    gameDescription,
     checkAnswer,
+    { incorrectAnswerType: GAME_ERROR_TYPE.incorrectAnswerShort },
   );
 };
 

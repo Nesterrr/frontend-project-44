@@ -1,4 +1,4 @@
-import runGame from '../index.js';
+import runGame, { GAME_ERROR_TYPE } from '../index.js';
 import { getRandomNumber } from '../utils.js';
 
 const MIN_PROGRESSION_LENGTH = 5;
@@ -7,11 +7,7 @@ const MIN_PROGRESSION_DELTA = 2;
 const PROGRESSION_DELTA_RANGE = 8;
 const PROGRESSION_START_NUMBER_RANGE = 10;
 
-const gameText = {
-  description: 'What number is missing in the progression?',
-  correctAnswer: 'Correct!',
-  incorrectAnswer: (incorrectAnswer, correctAnswer) => `'${incorrectAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`,
-};
+const gameDescription = 'What number is missing in the progression?';
 
 const getProgression = (min, max) => {
   const length = Math.round(Math.random() * (max - min + 1)) + min;
@@ -41,8 +37,9 @@ const checkAnswer = (answer, userAnswer) => Number(answer) === Number(userAnswer
 const runProgressionGame = () => {
   runGame(
     getQuestion,
-    gameText,
+    gameDescription,
     checkAnswer,
+    { incorrectAnswerType: GAME_ERROR_TYPE.incorrectAnswerLong },
   );
 };
 

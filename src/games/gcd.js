@@ -1,13 +1,9 @@
-import runGame from '../index.js';
+import runGame, { GAME_ERROR_TYPE } from '../index.js';
 import { getRandomNumber } from '../utils.js';
 
 const RANDOM_NUMBER_RANGE = 100;
 
-const gameText = {
-  description: 'Find the greatest common divisor of given numbers.',
-  correctAnswer: 'Correct!',
-  incorrectAnswer: (incorrectAnswer, correctAnswer) => `'${incorrectAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`,
-};
+const gameDescription = 'Find the greatest common divisor of given numbers.';
 
 const getGcd = (x, y) => {
   if (y > x) return getGcd(y, x);
@@ -30,8 +26,9 @@ const checkAnswer = (userAnswer, answer) => Number(answer) === Number(userAnswer
 const runGcdGame = () => {
   runGame(
     getQuestion,
-    gameText,
+    gameDescription,
     checkAnswer,
+    { incorrectAnswerType: GAME_ERROR_TYPE.incorrectAnswerLong },
   );
 };
 

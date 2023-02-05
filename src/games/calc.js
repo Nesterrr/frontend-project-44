@@ -1,11 +1,7 @@
-import runGame from '../index.js';
+import runGame, { GAME_ERROR_TYPE } from '../index.js';
 import { getRandomNumber } from '../utils.js';
 
-const gameText = {
-  description: 'What is the result of the expression?',
-  correctAnswer: 'Correct!',
-  incorrectAnswer: (incorrectAnswer, correctAnswer) => `'${incorrectAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`,
-};
+const gameDescription = 'What is the result of the expression?';
 
 const RANDOM_NUMBER_RANGE = 100;
 
@@ -24,8 +20,9 @@ const getQuestion = () => {
 const runCalcGame = () => {
   runGame(
     getQuestion,
-    gameText,
+    gameDescription,
     checkAnswer,
+    { incorrectAnswerType: GAME_ERROR_TYPE.incorrectAnswerLong },
   );
 };
 
