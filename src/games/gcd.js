@@ -1,4 +1,4 @@
-import runGame, { GAME_ERROR_TYPE } from '../index.js';
+import runGame from '../index.js';
 import { getRandomNumber } from '../utils.js';
 
 const RANDOM_NUMBER_RANGE = 100;
@@ -11,24 +11,20 @@ const getGcd = (x, y) => {
   return getGcd(y, x % y);
 };
 
-const getQuestion = () => {
+const getQuestionAnswer = () => {
   const number1 = getRandomNumber(0, RANDOM_NUMBER_RANGE);
   const number2 = getRandomNumber(0, RANDOM_NUMBER_RANGE);
 
   return ({
     question: `${number1} ${number2}`,
-    answer: getGcd(number1, number2),
+    answer: getGcd(number1, number2).toString(),
   });
 };
 
-const checkAnswer = (userAnswer, answer) => Number(answer) === Number(userAnswer);
-
 const runGcdGame = () => {
   runGame(
-    getQuestion,
+    getQuestionAnswer,
     gameDescription,
-    checkAnswer,
-    { incorrectAnswerType: GAME_ERROR_TYPE.incorrectAnswerLong },
   );
 };
 

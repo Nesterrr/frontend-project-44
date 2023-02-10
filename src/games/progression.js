@@ -1,4 +1,4 @@
-import runGame, { GAME_ERROR_TYPE } from '../index.js';
+import runGame from '../index.js';
 import { getRandomNumber } from '../utils.js';
 
 const PROGRESSION_MIN_BEGIN_NUMBER = 0;
@@ -17,7 +17,7 @@ const getProgression = (begin, step, length) => Array.from(
 
 const showProgression = (progression, index) => Object.assign([], progression, { [index]: '..' }).join(' ');
 
-const getQuestion = () => {
+const getQuestionAnswer = () => {
   const progression = getProgression(
     getRandomNumber(PROGRESSION_MIN_BEGIN_NUMBER, PROGRESSION_MAX_BEGIN_NUMBER),
     getRandomNumber(MIN_PROGRESSION_STEP, MAX_PROGRESSION_STEP),
@@ -27,18 +27,14 @@ const getQuestion = () => {
 
   return ({
     question: showProgression(progression, index),
-    answer: progression[index],
+    answer: progression[index].toString(),
   });
 };
 
-const checkAnswer = (answer, userAnswer) => Number(answer) === Number(userAnswer);
-
 const runProgressionGame = () => {
   runGame(
-    getQuestion,
+    getQuestionAnswer,
     gameDescription,
-    checkAnswer,
-    { incorrectAnswerType: GAME_ERROR_TYPE.incorrectAnswerLong },
   );
 };
 

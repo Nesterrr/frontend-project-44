@@ -1,14 +1,9 @@
-import runGame, { GAME_ERROR_TYPE } from '../index.js';
+import runGame from '../index.js';
 import { getRandomNumber } from '../utils.js';
-
-const PlayerAnswer = {
-  yes: 'yes',
-  no: 'no',
-};
 
 const RANDOM_NUMBER_RANGE = 100;
 
-const getIsPrime = (value) => {
+const isPrime = (value) => {
   if (value <= 1) {
     return false;
   }
@@ -23,26 +18,20 @@ const getIsPrime = (value) => {
 
 const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const getQuestion = () => {
+const getCorrectAnswer = (value) => (isPrime(value) ? 'yes' : 'no');
+
+const getQuestionAnswer = () => {
   const randomNumber = getRandomNumber(0, RANDOM_NUMBER_RANGE);
   return ({
     question: randomNumber,
-    answer: randomNumber,
+    answer: getCorrectAnswer(randomNumber).toString(),
   });
-};
-
-const checkAnswer = (number, userAnswer) => {
-  const isPrime = getIsPrime(number);
-  return (isPrime && userAnswer === PlayerAnswer.yes)
-    || (!isPrime && userAnswer === PlayerAnswer.no);
 };
 
 const runPrimeGame = () => {
   runGame(
-    getQuestion,
+    getQuestionAnswer,
     gameDescription,
-    checkAnswer,
-    { incorrectAnswerType: GAME_ERROR_TYPE.incorrectAnswerShort },
   );
 };
 
