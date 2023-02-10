@@ -5,10 +5,12 @@ const gameDescription = 'Answer "yes" if the number is even, otherwise answer "n
 
 const RANDOM_NUMBER_RANGE = 100;
 
-const isEven = (number, userAnswer) => (number % 2 === 0 && userAnswer === 'yes')
-  || (number % 2 !== 0 && userAnswer === 'no');
+const isEven = (number) => number % 2 === 0;
 
-const checkAnswer = (number, userAnswer) => isEven(number, userAnswer);
+const checkAnswer = (number, userAnswer) => {
+  const isNumberEven = isEven(number);
+  return (isNumberEven && userAnswer === 'yes') || (!isNumberEven && userAnswer === 'no');
+};
 
 const getQuestion = () => {
   const randomNumber = getRandomNumber(0, RANDOM_NUMBER_RANGE);
