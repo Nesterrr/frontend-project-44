@@ -16,8 +16,9 @@ const calc = (number1, number2, operator) => {
     case '-':
       return number1 - number2;
     case '+':
-    default:
       return number1 + number2;
+    default:
+      throw new Error(`Unknown operator: '${operator}'!`);
   }
 };
 
