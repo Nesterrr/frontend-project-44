@@ -1,5 +1,4 @@
 import readlineSync from 'readline-sync';
-import cli from './cli.js';
 
 const TOTAL_QUESTIONS = 3;
 
@@ -31,7 +30,8 @@ const runGame = (
   config,
 ) => {
   let questionIndex = 0;
-  const name = cli();
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!`);
 
   console.log(gameDescription);
 
