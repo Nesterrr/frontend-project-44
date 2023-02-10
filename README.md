@@ -1,4 +1,7 @@
 # Games
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/df76292ac903de5beeca/maintainability)](https://codeclimate.com/github/Nesterrr/frontend-project-44/maintainability)
+
  ## even
   Win
     [![asciicast](https://asciinema.org/a/RsIXTTdMVOoVNNK1F4HmzHJPI.svg)](https://asciinema.org/a/RsIXTTdMVOoVNNK1F4HmzHJPI)
@@ -35,6 +38,3 @@
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Nesterrr/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/Nesterrr/frontend-project-44/actions)
-
-[![Maintainability](https://api.codeclimate.com/v1/badges/df76292ac903de5beeca/maintainability)](https://codeclimate.com/github/Nesterrr/frontend-project-44/maintainability)
-
