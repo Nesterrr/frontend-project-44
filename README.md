@@ -1,7 +1,8 @@
 # Games
 
+### Hexlet tests and linter status:
 [![Maintainability](https://api.codeclimate.com/v1/badges/df76292ac903de5beeca/maintainability)](https://codeclimate.com/github/Nesterrr/frontend-project-44/maintainability)
-
+[![Actions Status](https://github.com/Nesterrr/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/Nesterrr/frontend-project-44/actions)
 ## Description
 
 Welcome to the CLI utility that offers 5 fun and challenging games to test your mental abilities! 
@@ -16,8 +17,8 @@ Each game offers different levels of difficulty, and you can progress through th
 
 ## Install
 
-make install - to install
-make publishto - publish
+```make install - to install
+make publish - publish```
 
  ## even
   Win
@@ -52,6 +53,3 @@ make publishto - publish
 
   Loss
    [![asciicast](https://asciinema.org/a/ocqFsrKuTn2jHuNmsshELtSBr.svg)](https://asciinema.org/a/ocqFsrKuTn2jHuNmsshELtSBr)
-
-### Hexlet tests and linter status:
-[![Actions Status](https://github.com/Nesterrr/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/Nesterrr/frontend-project-44/actions)

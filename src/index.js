@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const TOTAL_QUESTIONS = 3;
+const questionsCount = 3;
 
 const runGame = (
   getQuestionAnswer,
@@ -12,7 +12,7 @@ const runGame = (
 
   console.log(gameDescription);
 
-  while (questionIndex < TOTAL_QUESTIONS) {
+  while (questionIndex < questionsCount) {
     const { question, answer } = getQuestionAnswer();
 
     console.log(`Question: ${question}`);
